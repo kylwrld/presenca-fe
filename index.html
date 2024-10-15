@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presença App</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="display: flex; flex-direction: column;">
+    <nav>
+        <div class="menu">
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <h1>Presença App</h1>
+        </div>
+        <div class="links" id="menuLinks">
+            <a href="index.html">Home</a>
+            <a href="mapa.html">Mapa</a>
+            <a href="contato.html">Contato</a>
+        </div>
+    </nav>
+
+    <form id="presenca-form">
+        <h2>Presença</h2>
+        <input type="text" id="name" placeholder="Nome do aluno" required>
+        <input type="text" id="description" placeholder="Resumo" required>
+        <input type="file" id="photo" accept="image/*" required>
+        <button type="submit">Marcar presença</button>
+    </form>
+    <div class="list">
+        <div id="presencas-list"></div>
+
+    </div>
+
+    <div class="opacity"></div>
+    <div class="edit">
+        <h2>Editar</h2>
+        <input type="text" id="name-edit" placeholder="Nome do aluno" required>
+        <input type="text" id="description-edit" placeholder="Resumo" required>
+        <input type="file" id="photo-edit" accept="image/*" required>
+        <button type="submit" id="submit-edit">Enviar mudanças</button>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        function toggleMenu() {
+            const links = document.getElementById('menuLinks');
+            links.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
