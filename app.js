@@ -16,7 +16,7 @@ document.getElementById('presenca-form').addEventListener('submit', async functi
         };
 
         try {
-            const response = await fetch('http://127.0.0.1:3000/api/presencas', {
+            const response = await fetch('https://presenca-be.onrender.com/api/presencas', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -50,8 +50,8 @@ submit.addEventListener("click", async (e) => {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude
         };
-        
-        await fetch(`http://127.0.0.1:3000/api/presencas/${edit.getAttribute("data-id")}`, {
+
+        await fetch(`https://presenca-be.onrender.com/api/presencas/${edit.getAttribute("data-id")}`, {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json'
@@ -87,7 +87,7 @@ const createDeleteButton = (presenca) => {
     `
 
     deleteButton.addEventListener("click", async (e) => {
-        await fetch(`http://127.0.0.1:3000/api/presencas/${presenca._id}`, {
+        await fetch(`https://presenca-be.onrender.com/api/presencas/${presenca._id}`, {
             method:"DELETE",
         })
         fetchPresencas()
@@ -131,7 +131,7 @@ const createEditButton = (item, presenca) => {
 
 async function fetchPresencas() {
     try {
-        const response = await fetch('http://127.0.0.1:3000/api/presencas');
+        const response = await fetch('https://presenca-be.onrender.com/api/presencas');
         if (!response.ok) {
             throw new Error('Erro ao buscar presenças');
         }
